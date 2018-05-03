@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+{% for articulo in articulos %}
+        <div>
+            <p>Publicado: {{ articulo.published_date|date:'d/m/Y'}}</p>
+            <h2><a href="articulo/{{articulo.id}}">{{ articulo.title }}</a></h2>
+            <p>{{ articulo.author}}</p>
+            <p>{{ articulo.text|truncatewords:4|slice:":-3" }}</p>
+        </div>
+{% endfor %}
+
+    </body>
+</html>

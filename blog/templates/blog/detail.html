@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+
+        <div>
+            <p>Publicado: {{ articulo.published_date|date:'d/m/Y'}}</p>
+            <h2>{{ articulo.title }}</h2>
+            <p>{{ articulo.author}}</p>
+            <p>{{ articulo.text|safe}}</p>
+        </div>
+
+
+    </body>
+</html>
