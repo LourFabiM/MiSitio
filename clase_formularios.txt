@@ -1,0 +1,26 @@
+
+
+-----------formularios-----------------
+
+
+-> patron del estilo igual q los modelos, tambien se declaran los campos
+
+- en el formulario: 
+
+class contactoform(form.Form):
+    form.Textfield...
+    email = forms.Emailfield(requered = True)
+
+- en la vista:
+    c = contactoform()
+
+    render(request, "template.html", {"form": c})
+    contactoform(data = request.POST)
+    c.is_valid()
+    c.cleaned_data
+
+
+
+- en el template: 
+
+    {{ form.as_table }}
