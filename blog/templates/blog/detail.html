@@ -12,5 +12,23 @@
         <p>{{ articulo.author}}</p>
         <p>{{ articulo.text|safe}}</p>
     </div>
-    
+
+
+    <h3>COMENTARIOS</h3>
+
+    <a href="{% url 'comentar' articulo.id %}">Crear comentario</a>
+
+    <ul>
+        {% for comentario in comentarios %}
+            <li>
+                {{ comentario.nombre }} - Fecha: {{comentario.fecha }}
+
+                <p>{{ comentario.comentario }}</p>
+
+            </li>
+        {% endfor %}
+
+    </ul>
+
+
 {% endblock %}
