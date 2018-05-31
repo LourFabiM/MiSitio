@@ -19,3 +19,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comentario(models.Model):
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=50)
+    fecha = models.DateTimeField(default=timezone.now)
+    comentario = models.TextField()
+
